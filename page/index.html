@@ -1013,17 +1013,17 @@
         }
 
 
-
-    </style>
+</style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="logo">
                 <div class="logo-icon">
-                    <img src="/src/images/icon.webp" alt="Shadow'S - Api'S Logo">
+                    <img src="/src/images/icon.webp" alt="Nagato Api'S Logo">
                 </div>
-                Shadow'S - Api'S
+                Nagato Api'S
             </a>
             <ul class="nav-links">
                 <li><a href="#overview">Overview</a></li>
@@ -1038,6 +1038,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="overview">
         <div class="container">
             <div class="hero-content">
@@ -1045,7 +1046,7 @@
                     <i class="bi bi-rocket-takeoff"></i>
                     <span class="gradient-text-badge">REST API Platform</span>
                 </div>
-                <h1>Shadow'S - Api'S</h1>
+                <h1>Nagato Api'S</h1>
                 <p>Powerful, scalable, and developer-friendly REST API platform. Build amazing applications with our comprehensive suite of APIs designed for modern development.</p>
                 <div class="cta-buttons">
                     <a href="#features" class="btn btn-primary">
@@ -1061,10 +1062,11 @@
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Why Choose Shadow'S - Api'S?</h2>
+                <h2>Why Choose Nagato Api'S?</h2>
                 <p>Built by developers, for developers. We understand what you need to build amazing applications with our powerful REST API platform.</p>
             </div>
             <div class="features-grid">
@@ -1100,6 +1102,7 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title fade-in">
@@ -1107,12 +1110,12 @@
                     <i class="bi bi-question-circle"></i>
                 </div>
                 <h2>Frequently Asked Questions</h2>
-                <p>Got questions? We've got answers. Find everything you need to know about Shadow'S - Api'S Hub.</p>
+                <p>Got questions? We've got answers. Find everything you need to know about Nagato Api'S Hub.</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item fade-in">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        How do I get started with Shadow'S demo APIs?
+                        How do I get started with Nagato Api'S REST APIs?
                         <i class="bi bi-chevron-down faq-chevron"></i>
                     </button>
                     <div class="faq-answer">
@@ -1128,7 +1131,84 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            We offer a wide range of endpoints covering data retrieval, management, and more. Please refer to the **Documentation** section for the full, up-to-date list, including supported HTTP methods and request/response schemas for each service.
+                            We offer 50+ REST API endpoints covering user management, data processing, file operations, authentication, analytics, and more. All endpoints follow RESTful conventions with standard HTTP methods (GET, POST, PUT, DELETE) and return JSON responses.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What authentication methods do you support?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We support multiple authentication methods including API keys, OAuth 2.0, JWT tokens, and Bearer tokens. You can authenticate via headers (Authorization: Bearer your-token) or query parameters depending on your security requirements.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What are the rate limits for API requests?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Free tier: 1,000 requests/month. Pro tier: 100,000 requests/month. Enterprise: Unlimited. Rate limits are enforced per API key and reset monthly. We also support burst limits for handling traffic spikes.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you provide webhook support?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We support webhooks for real-time notifications. You can configure webhook URLs to receive HTTP POST requests when specific events occur, such as user registrations, data updates, or system alerts.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What HTTP status codes do your APIs return?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our APIs return standard HTTP status codes: 200 (Success), 201 (Created), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 429 (Rate Limited), and 500 (Server Error). All error responses include detailed error messages and error codes.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I test APIs without authentication?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We provide a public sandbox environment where you can test most endpoints without authentication. Visit our documentation page to try our interactive API explorer with sample requests and responses.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer SDKs for different programming languages?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! We provide official SDKs for JavaScript/Node.js, Python, PHP, Java, C#, Go, and Ruby. All SDKs are open-source, regularly updated, and include comprehensive documentation with examples.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do I handle API errors and retries?
+                        <i class="bi bi-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Implement exponential backoff for retries (1s, 2s, 4s, 8s). Retry on 5xx errors and network timeouts. Don't retry 4xx errors except 429 (rate limit). Our SDKs include built-in retry logic with configurable parameters.
                         </div>
                     </div>
                 </div>
@@ -1136,71 +1216,240 @@
         </div>
     </section>
 
-    <footer class="main-footer">
+    <!-- Modal -->
+    <div class="modal" id="apiModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">API Endpoint</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-content">
-            <div class="copyright">
-                &copy; 2024 Shadow'S - Api'S. All rights reserved.
-            </div>
-            <div class="footer-middle">
-                <div class="footer-links">
-                    <a href="/privacy" class="footer-link"><i class="bi bi-lock"></i>Privacy</a>
-                    <a href="/terms" class="footer-link"><i class="bi bi-file-text"></i>Terms</a>
-                    <a href="/status" class="footer-link"><i class="bi bi-activity"></i>Status</a>
-                </div>
-            </div>
-            <div class="footer-social">
-                <a href="#" class="footer-link"><i class="bi bi-github"></i></a>
-                <a href="#" class="footer-link"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="footer-link"><i class="bi bi-linkedin"></i></a>
-            </div>
+            <div class="copyright">&copy; 2025 Nagato Api'S Corp. All rights reserved.</div>
+
+            <nav class="footer-links" aria-label="Additional links">
+                <a href="https://whatsapp.com/channel/0029Vb6n9HIDJ6H6oibRvv1D" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="bi bi-whatsapp"></i> Info
+                </a>
+                <a href="mailto:vgxurl@gmail.com" class="footer-link">
+                    <i class="bi bi-envelope"></i> Contact
+                </a>
+            </nav>
         </div>
     </footer>
 
     <script>
-        // --- Funciones de JavaScript (No modificadas según tu instrucción) ---
-
-        function toggleMobileMenu() {
-            const links = document.querySelector('.nav-links');
-            links.classList.toggle('mobile-active');
-        }
-
-        function toggleFaq(button) {
-            const item = button.parentElement;
-            const answer = item.nextElementSibling;
-            const chevron = button.querySelector('.faq-chevron');
-
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                answer.style.maxHeight = null;
-                chevron.style.transform = 'rotate(0deg)';
-            } else {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                chevron.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        // Función para manejar la visibilidad al hacer scroll (Scroll Animations)
-        const fadeInElements = document.querySelectorAll('.fade-in');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
         const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        fadeInElements.forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        const apiEndpoints = {
+            users: {
+                title: 'GET /api/users',
+                method: 'GET',
+                url: '/api/users',
+                description: 'Retrieve a paginated list of all users',
+                parameters: [
+                    { name: 'page', type: 'number', description: 'Page number (default: 1)' },
+                    { name: 'limit', type: 'number', description: 'Items per page (default: 10)' }
+                ]
+            },
+            user: {
+                title: 'GET /api/users/{id}',
+                method: 'GET',
+                url: '/api/users/{id}',
+                description: 'Get detailed information about a specific user',
+                parameters: [
+                    { name: 'id', type: 'string', description: 'User ID', required: true }
+                ]
+            },
+            createUser: {
+                title: 'POST /api/users',
+                method: 'POST',
+                url: '/api/users',
+                description: 'Create a new user account',
+                parameters: [
+                    { name: 'name', type: 'string', description: 'User full name', required: true },
+                    { name: 'email', type: 'email', description: 'User email address', required: true },
+                    { name: 'password', type: 'password', description: 'User password', required: true }
+                ]
+            },
+            updateUser: {
+                title: 'PUT /api/users/{id}',
+                method: 'PUT',
+                url: '/api/users/{id}',
+                description: 'Update an existing user\'s information',
+                parameters: [
+                    { name: 'id', type: 'string', description: 'User ID', required: true },
+                    { name: 'name', type: 'string', description: 'User full name' },
+                    { name: 'email', type: 'email', description: 'User email address' }
+                ]
+            },
+            deleteUser: {
+                title: 'DELETE /api/users/{id}',
+                method: 'DELETE',
+                url: '/api/users/{id}',
+                description: 'Permanently delete a user account',
+                parameters: [
+                    { name: 'id', type: 'string', description: 'User ID', required: true }
+                ]
+            },
+            posts: {
+                title: 'GET /api/posts',
+                method: 'GET',
+                url: '/api/posts',
+                description: 'Fetch all posts with filtering options',
+                parameters: [
+                    { name: 'author', type: 'string', description: 'Filter by author ID' },
+                    { name: 'category', type: 'string', description: 'Filter by category' },
+                    { name: 'sort', type: 'string', description: 'Sort order (date, title, author)' }
+                ]
+            }
+        };
+
+        function openModal(endpointId) {
+            const endpoint = apiEndpoints[endpointId];
+            if (!endpoint) return;
+
+            document.getElementById('modalTitle').textContent = endpoint.title;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <p style="margin-bottom: 1.5rem; color: var(--muted-foreground);">${endpoint.description}</p>
+                
+                <form onsubmit="testEndpoint(event, '${endpointId}')">
+                    ${endpoint.parameters.map(param => `
+                        <div class="form-group">
+                            <label for="${param.name}">
+                                ${param.name} ${param.required ? '*' : ''}
+                                <span style="font-weight: normal; color: var(--muted-foreground);">(${param.type})</span>
+                            </label>
+                            <input 
+                                type="${param.type}" 
+                                id="${param.name}" 
+                                name="${param.name}" 
+                                placeholder="${param.description}"
+                                ${param.required ? 'required' : ''}
+                            >
+                        </div>
+                    `).join('')}
+                    
+                    <button type="submit" class="btn btn-primary" style="margin-bottom: 1.5rem;">
+                        Test ${endpoint.method} Request
+                    </button>
+                </form>
+                
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Response:</h4>
+                    <div class="response-area" id="responseArea">Click "Test Request" to see the response</div>
+                </div>
+            `;
+
+            document.getElementById('apiModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('apiModal').style.display = 'none';
+        }
+
+        function testEndpoint(event, endpointId) {
+            event.preventDefault();
+            const endpoint = apiEndpoints[endpointId];
+            const formData = new FormData(event.target);
+            const params = {};
+
+            for (let [key, value] of formData.entries()) {
+                if (value) params[key] = value;
+            }
+
+            const mockResponse = {
+                status: 200,
+                message: 'Success',
+                data: endpoint.method === 'GET' ? 
+                    (endpointId === 'users' ? [
+                        { id: 1, name: 'John Doe', email: 'john@example.com' },
+                        { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
+                    ] : { id: 1, name: 'John Doe', email: 'john@example.com' }) :
+                    { message: `${endpoint.method} operation completed successfully` },
+                timestamp: new Date().toISOString()
+            };
+
+            document.getElementById('responseArea').textContent = JSON.stringify(mockResponse, null, 2);
+        }
+
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            });
+
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('apiModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+            }
+        });
+
     </script>
 </body>
     </html>
