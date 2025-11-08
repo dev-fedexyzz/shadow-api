@@ -1,0 +1,153 @@
+{
+  "name": "Nagatol Api'S",
+  "version": "v7.1.0",
+  "description": "Simple and easy to use API documentation.",
+  "maintenance": {
+    "enabled": false,
+    "message": ""
+  },
+  "bannerImage": "/src/images/banner.jpg",
+  "previewImage": "/src/images/preview.png",
+  "header": {
+    "status": "Online"
+  },
+  "apiSettings": {
+    "creator": "NagatoByte",
+    "requireApikey": false,
+    "apikey": {
+      "demo": {
+        "rateLimit": "5000/day",
+        "enabled": true
+      },
+      "admin": {
+        "rateLimit": "unlimited",
+        "enabled": true
+      },
+      "Raol": {
+        "rateLimit": "unlimited",
+        "enabled": true,
+        "category": "premium",
+        "name": "Raol"
+      }
+    }
+  },
+  "categories": [
+    {
+      "name": "Artificial Intelligence",
+      "items": [
+        {
+          "name": "LuminAI",
+          "desc": "Advanced AI assistant powered by LuminAI for intelligent conversations",
+          "path": "/ai/luminai?text=",
+          "status": "error",
+          "params": {
+            "text": "Text message for the AI to respond to"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Random Images",
+      "items": [
+        {
+          "name": "Blue Archive",
+          "desc": "Get random high-quality Blue Archive character images",
+          "path": "/random/ba",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "name": "Image Makers",
+      "items": [
+        {
+          "name": "BRAT Generator",
+          "desc": "Generate BRAT-style text images with customizable colors and backgrounds",
+          "path": "/maker/brat?text=Hello World",
+          "status": "ready",
+          "params": {
+            "text": "Text to be inserted into the BRAT image (required)"
+          }
+        },
+        {
+          "name": "BRAT Video Generator",
+          "desc": "Generate animated BRAT-style text videos with customizable colors and backgrounds",
+          "path": "/maker/bratvid?text=Hello World",
+          "status": "ready",
+          "params": {
+            "text": "Text to be inserted into the BRAT video (required)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Download",
+      "items": [
+        {
+          "name": "YouTube MP3",
+          "desc": "Download audio in MP3 format from YouTube",
+          "path": "/download/ytmp3?url=",
+          "status": "ready",
+          "params": {
+            "url": "YouTube video URL"
+          }
+        },
+        {
+          "name": "YouTube MP4",
+          "desc": "Download video in MP4 format from YouTube",
+          "path": "/download/ytmp4?url=",
+          "status": "ready",
+          "params": {
+            "url": "YouTube video URL"
+          }
+        },
+        {
+          "name": "Facebook Downloader",
+          "desc": "Download videos or reels from Facebook",
+          "path": "/download/facebook?url=",
+          "status": "ready",
+          "params": {
+            "url": "Facebook video URL"
+          }
+        },
+        {
+          "name": "Instagram Downloader",
+          "desc": "Download posts, reels, or stories from Instagram",
+          "path": "/download/instagram?url=",
+          "status": "ready",
+          "params": {
+            "url": "Instagram post or reel URL"
+          }
+        },
+        {
+          "name": "TikTok Downloader",
+          "desc": "Download TikTok videos without watermark",
+          "path": "/download/tiktok?url=",
+          "status": "ready",
+          "params": {
+            "url": "TikTok video URL"
+          }
+        },
+        {
+          "name": "Spotify Downloader",
+          "desc": "Download songs or playlists from Spotify",
+          "path": "/download/spotify?url=",
+          "status": "ready",
+          "params": {
+            "url": "Spotify track or playlist URL"
+          }
+        }
+      ]
+    }
+  ],
+  "apiKeys": [
+    {
+      "key": "Raol",
+      "name": "Raol",
+      "category": "premium",
+      "ratelimit": "unlimited",
+      "active": true,
+      "createdAt": "2025-10-05T04:45:58.171Z"
+    }
+  ]
+}
