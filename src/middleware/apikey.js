@@ -83,7 +83,7 @@ export function validateApiKey(req, res, next) {
     const settings = loadSettings()
     return res.status(401).json({
       status: false,
-      creator: settings?.apiSettings?.creator || "NagatoByte",
+      creator: settings?.apiSettings?.creator || "Shadow'S demo",
       error: "API key required",
       message: "Please provide a valid API key in the query parameters"
     })
@@ -94,7 +94,7 @@ export function validateApiKey(req, res, next) {
   if (!settings || !settings.apiSettings || !settings.apiSettings.apikey) {
     return res.status(500).json({
       status: false,
-      creator: settings?.apiSettings?.creator || "NagatoByte",
+      creator: settings?.apiSettings?.creator || "Shadow'S demo",
       error: "Server configuration error",
       message: "API key validation is not properly configured"
     })
@@ -103,7 +103,7 @@ export function validateApiKey(req, res, next) {
   if (!settings.apiSettings.apikey[apikey]) {
     return res.status(403).json({
       status: false,
-      creator: settings?.apiSettings?.creator || "NagatoByte",
+      creator: settings?.apiSettings?.creator || "Shadow'S demo",
       error: "Invalid API key",
       message: "The provided API key is not valid or does not exist"
     })
@@ -112,7 +112,7 @@ export function validateApiKey(req, res, next) {
   if (!checkRateLimit(apikey)) {
     return res.status(429).json({
       status: false,
-      creator: settings?.apiSettings?.creator || "NagatoByte",
+      creator: settings?.apiSettings?.creator || "Shadow'S demo",
       error: "Rate limit exceeded",
       message: "You have exceeded the rate limit for this API key"
     })
