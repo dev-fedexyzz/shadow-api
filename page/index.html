@@ -1025,6 +1025,7 @@
                 Shadow Api'S
             </a>
             <ul class="nav-links">
+                <li><a href="#verification-area">Verificación</a></li>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="/docs">Documentation</a></li>
@@ -1047,9 +1048,9 @@
                 <h1>Shadow Api'S</h1>
                 <p>Powerful, scalable, and developer-friendly REST API platform. Build amazing applications with our comprehensive suite of APIs designed for modern development.</p>
                 <div class="cta-buttons">
-                    <a href="#features" class="btn btn-primary">
-                        <i class="bi bi-play-circle"></i>
-                        Get Started
+                    <a href="#verification-area" class="btn btn-primary">
+                        <i class="bi bi-person-plus-fill"></i>
+                        Comenzar Verificación
                     </a>
                     <a href="/docs" class="btn btn-secondary">
                         <i class="bi bi-book"></i>
@@ -1060,6 +1061,57 @@
         </div>
     </section>
 
+    <section class="verification-section" id="verification-area" style="padding: 8rem 0; background: var(--card); text-align: center;">
+        <div class="container">
+            <div class="registration-card fade-in" style="max-width: 450px; margin: 0 auto; padding: 40px; border-radius: 1rem; background: var(--background); border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+                <h2 style="color: var(--primary); margin-bottom: 30px; font-size: 2rem;">Crea tu Cuenta y Verifica</h2>
+                
+                <form id="register-form">
+                    <div style="margin-bottom: 20px;">
+                        <input type="text" id="reg-name" name="name" placeholder="Nombre" required 
+                               class="form-input" style="width: 100%; padding: 12px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--muted); color: var(--foreground); font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <input type="email" id="reg-email" name="email" placeholder="Correo Electrónico Principal" value="fedelanyt20@gmail.com" required 
+                               class="form-input" style="width: 100%; padding: 12px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--muted); color: var(--foreground); font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <input type="password" id="reg-password" name="password" placeholder="Contraseña de tu Cuenta" required 
+                               class="form-input" style="width: 100%; padding: 12px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--muted); color: var(--foreground); font-size: 1rem;">
+                    </div>
+                    
+                    <button type="submit" id="register-btn" 
+                            class="btn btn-primary" style="width: 100%; padding: 12px 0; font-size: 1.1rem;">
+                        Registrar y Enviar Código
+                    </button>
+                    <p id="reg-message" style="margin-top: 15px; color: #ffeb3b; font-size: 0.9rem;"></p>
+                </form>
+
+                <form id="verify-code-form" style="display: none;">
+                    <p id="verify-instruction" style="color: var(--muted-foreground); margin-bottom: 20px; line-height: 1.5;">
+                        Se ha enviado un **código de 5 dígitos** al correo: <strong id="display-email">fedelanyt20@gmail.com</strong>
+                    </p>
+                    <div style="margin-bottom: 30px;">
+                        <input type="text" id="verification-code-input" name="code" placeholder="Código de 5 dígitos" required maxlength="5" pattern="\d{5}"
+                               class="form-input" style="width: 100%; padding: 15px 12px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--muted); color: var(--foreground); font-size: 1.5rem; text-align: center; letter-spacing: 0.5rem;">
+                    </div>
+                    
+                    <button type="submit" id="verify-btn" 
+                            class="btn" style="width: 100%; padding: 12px 0; font-size: 1.1rem; background: #28a745; color: white; transition: background 0.3s ease;">
+                        Verificar Código
+                    </button>
+                    <p id="verify-message" style="margin-top: 15px; color: #ffeb3b; font-size: 0.9rem;"></p>
+                </form>
+
+                <p style="margin-top: 30px; font-size: 0.85rem; color: var(--muted-foreground);">
+                    <i class="bi bi-shield-lock-fill" style="color: var(--primary);"></i> Sus datos están seguros con nuestra tecnología de encriptación.
+                </p>
+
+            </div>
+        </div>
+    </section>
     <section class="features" id="features">
         <div class="container">
             <div class="section-title fade-in">
@@ -1444,6 +1496,104 @@
                 nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.5)';
             }
         });
+
+        // --- LÓGICA DE REGISTRO Y VERIFICACIÓN (INICIO) ---
+        let MOCK_VERIFICATION_CODE = '';
+        const REGISTER_FORM = document.getElementById('register-form');
+        const VERIFY_FORM = document.getElementById('verify-code-form');
+        const REG_MESSAGE = document.getElementById('reg-message');
+        const VERIFY_MESSAGE = document.getElementById('verify-message');
+        const EMAIL_INPUT = document.getElementById('reg-email');
+
+        // Función para generar un código de 5 dígitos
+        function generateCode() {
+            return Math.floor(10000 + Math.random() * 90000).toString();
+        }
+
+        // Paso 1: Manejar el envío del formulario de registro
+        REGISTER_FORM.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular deshabilitar el botón
+            const btn = document.getElementById('register-btn');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            // Limpiar mensajes
+            REG_MESSAGE.textContent = '';
+            VERIFY_MESSAGE.textContent = '';
+
+            // Simular llamada a la API después de un breve retraso
+            setTimeout(() => {
+                // 1. Generar código
+                MOCK_VERIFICATION_CODE = generateCode();
+                
+                // 2. Mostrar mensaje de éxito y el código (SOLO PARA DEMOSTRACIÓN)
+                REG_MESSAGE.style.color = '#00cec9';
+                REG_MESSAGE.innerHTML = `¡Registro exitoso! Código enviado a **${EMAIL_INPUT.value}**.`;
+                
+                // *** IMPORTANTE: MOSTRAR CÓDIGO SOLO PARA DEMOSTRACIÓN EN EL FRONT-END ***
+                console.log('CÓDIGO DE VERIFICACIÓN (DEMO):', MOCK_VERIFICATION_CODE);
+                REG_MESSAGE.innerHTML += `<br>El código es: <strong style="color: #9a8cff; font-size: 1.2em;">${MOCK_VERIFICATION_CODE}</strong> (¡Cópialo para el siguiente paso!)`;
+
+
+                // 3. Ocultar formulario de registro y mostrar formulario de verificación
+                REGISTER_FORM.style.display = 'none';
+                document.getElementById('display-email').textContent = EMAIL_INPUT.value;
+                VERIFY_FORM.style.display = 'block';
+                document.getElementById('verification-code-input').focus();
+
+
+                // Restaurar botón de registro
+                btn.textContent = 'Registrar y Enviar Código';
+                btn.disabled = false;
+
+            }, 2000); // 2 segundos para simular latencia de red/servidor
+        });
+
+        // Paso 2: Manejar el envío del formulario de verificación
+        VERIFY_FORM.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const enteredCode = document.getElementById('verification-code-input').value.trim();
+            const btn = document.getElementById('verify-btn');
+            
+            // Simular deshabilitar el botón
+            btn.textContent = 'Verificando...';
+            btn.disabled = true;
+            VERIFY_MESSAGE.textContent = '';
+
+            // Simular llamada a la API de verificación
+            setTimeout(() => {
+                if (enteredCode === MOCK_VERIFICATION_CODE && enteredCode.length === 5) {
+                    // CÓDIGO CORRECTO
+                    VERIFY_MESSAGE.style.color = '#28a745';
+                    VERIFY_MESSAGE.textContent = '¡Verificación exitosa! Redireccionando...';
+
+                    // REDIRECCIÓN FINAL A LA URL SOLICITADA
+                    const redirectUrl = `https://shadow-apis.vercel.app/aqui?code=${enteredCode}`;
+                    console.log('Redireccionando a:', redirectUrl);
+                    
+                    // Alerta con la URL de redirección final
+                    alert(`¡VERIFICACIÓN COMPLETA! Serás redirigido a:\n${redirectUrl}`);
+                    
+                    // Simulación de redirección:
+                    window.location.href = redirectUrl; // Descomentar esta línea en producción
+                    btn.textContent = 'Verificación Completa';
+
+
+                } else {
+                    // CÓDIGO INCORRECTO
+                    VERIFY_MESSAGE.style.color = '#ff5555';
+                    VERIFY_MESSAGE.textContent = 'Código incorrecto o expirado. Intente de nuevo.';
+                    
+                    // Restaurar botón de verificación
+                    btn.textContent = 'Verificar Código';
+                    btn.disabled = false;
+                }
+            }, 1500); // 1.5 segundos para simular latencia
+        });
+        // --- LÓGICA DE REGISTRO Y VERIFICACIÓN (FIN) ---
 
     </script>
 </body>
